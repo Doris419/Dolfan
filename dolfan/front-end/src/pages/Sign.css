@@ -1,0 +1,273 @@
+.bigSignpage{
+    z-index: 0;
+    position: relative;
+    display: inline-block;
+    padding: 10px 10px 0 10px;
+    width: 100%;
+    /* height: 650px; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 0.5px;
+    margin-bottom: 0.5px;  
+    background: #ffffff;
+    background: linear-gradient(45deg, #fff3c1, #fff3c1, #fff3c1);
+    box-sizing: border-box;
+    
+    /* box-shadow: 0px 10px 15px 0px rgba(0,0,0,0.2); */
+}
+.bigSignpage:hover{
+    background: linear-gradient(45deg, #fff3c1, #fbe9a0, #ffea98);
+    background: -webkit-linear-gradient(45deg, #fff3c1, #ffeeaa, #ffea98);
+    background-size: 600% 600%;
+    animation: AnimeGrade 10s ease infinite;
+    text-decoration: none;
+}
+.bigSignpage:before{
+    content: '';
+    position: absolute;
+    top: 47px;
+    right: 0;
+    width: 20px;
+    height: 1px;
+    background-color: #FFF;
+    transition: .2s;
+}
+.bigSignpage:hover:before{
+  width: 40px
+}
+
+@keyframes AnimeGrade {
+    0%{
+    background-position: 0% 50%
+    }
+    50%{
+    background-position: 100% 50%
+    }
+    100%{
+    background-position: 0% 50%
+    }
+}
+
+.Signpage{
+    width: 42%;
+    /* height: 550px; */
+    /* border:3px rgb(255, 255, 255) solid; */
+    border: 0;
+    /* box-shadow: 0 0 5px hsla(240, 40%, 15%, 0.6); */
+    background-color: #ffffff;
+    border-radius: 10px;
+    -webkit-box-shadow: 0 0 15px rgba(136, 135, 135, 0.7);
+	-moz-box-shadow: 0 0 15px rgba(136, 135, 135, 0.7);
+	box-shadow: 0 0 15px rgba(136, 135, 135, 0.7);
+    margin: 40px 0;
+    /* -webkit-filter: drop-shadow(5px 5px 5px rgba(0, 0, 0, 0.7));
+    filter: drop-shadow(5px 5px 5px rgba(0, 0, 0, 0.7)) */
+}
+.Signtitle{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.Sign{
+    width: 80%;
+    font-size:40px;
+    font-weight: bold;
+    /* font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; */
+    font-family:sans-serif;
+    margin-top: 50px;
+    z-index: 99;
+}
+.Signhr{
+    margin-bottom: 5px;
+    margin-bottom: 50px;
+    width: 80%;
+    z-index:1;
+    position: relative;
+}
+.Signemail{
+    width: 100%;
+    margin-bottom: 20px;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+}
+.Signemail1{
+    width: 60%;
+    height: 40px;
+    border-radius: 5px;
+}
+.Signpassword{
+    width: 100%;
+    margin-bottom: 20px;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+}
+.Signpassword1{
+    width: 60%;
+    height: 40px;
+    border-radius: 5px;
+}
+.Signsubmit{
+    width: 100%;
+    display: flex;
+    flex-wrap: nowrap;
+    display: flex;
+    justify-content: center;
+}
+.Signsubmit1{
+    width: 100px;
+    height: 35px;
+    border-radius: 10px;
+    margin:0;
+    padding:0;
+    cursor: pointer;
+    margin: 20px;
+    border-color: #ffe054;
+    background-color: #ffe984;
+    color: #000000;
+    font-family:sans-serif;
+    font-size: medium;
+    font-weight: 600;
+}
+.more{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    padding-top: 10px;
+}
+.Morehr{
+    margin-bottom: 50px;
+    width: 50%;
+    z-index: 1;
+}
+.pos{
+    position: absolute;
+    left: 50%;
+    width: 100px;
+    height: 20px;
+    margin-left: -50px;
+    margin-top: -40px;
+    background: rgb(255, 255, 255);
+    z-index: 2;
+}
+.morearea{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: -15px;
+    margin-bottom: 25px;
+}
+.google{
+    width: 38px;
+    height: 38px;
+    cursor: pointer;
+    margin-top: -10px;
+}
+.profile_content{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.profile_image{
+    width: 70px;
+    height: 70px;
+    margin: auto;
+    margin-bottom: 20px;
+}
+.profileA{
+    display: flex;
+    flex-wrap: nowrap;
+    margin-left: 35%;
+    margin-top: 20px;
+}
+.profileT{
+    width: 80px;
+    font-family:sans-serif;
+    font-size: 17px;
+    font-weight: 550;
+}
+.profileD{
+    font-family:sans-serif;
+}
+.Signsubmit2{
+    width: 100px;
+    height: 35px;
+    border-radius: 10px;
+    margin:0;
+    padding:0;
+    cursor: pointer;
+    margin: 20px;
+    border-color: #ffe054;
+    background-color: #ffe984;
+    color: #000000;
+    font-family:sans-serif;
+    font-size: medium;
+    font-weight: 600;
+    margin: auto;
+    margin-top: 60px;
+}
+.moreareafun{
+    width: 100%;
+    /* width: 300px; */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: auto;
+    margin-top: -15px;
+    margin-bottom: 15px;
+}
+.record{
+    width: 60px;
+    height: 60px;
+    font-family:sans-serif;
+    font-size: medium;
+    font-weight: 550;
+    margin: 20px;
+    cursor: pointer;
+    display: flex;
+    justify-items: center;
+    align-items: center;
+    padding-left: 13px;
+}
+
+.record:active,
+.record:hover{
+    background-color: #efeded;
+    border-radius: 50%;
+}
+.waterfall {
+    width: 90%;
+    margin: 0px auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    column-count: 5;
+    column-gap: 5px;
+}
+.item {
+    /* background-color: #eeeeee; */
+    text-align: center;
+    padding: 6px;
+    box-sizing: border-box;
+    margin: 0 auto 5px;
+    break-inside: avoid;
+    border: 0;
+    border-radius: 10px;
+    cursor: pointer;
+    /* box-shadow: 0 0 3px hsla(240, 40%, 15%, 0.6); */
+    -webkit-filter: drop-shadow(5px 5px 5px rgba(0, 0, 0, 0.7));
+    filter: drop-shadow(5px 5px 5px rgba(0, 0, 0, 0.7))
+}
+.item:hover {
+    transform: scale(1.01);
+    transition: 0.5ms;
+}
+.itemimg{
+    width: 100%;
+    object-fit: cover;
+    object-position: 50% 50%;
+    border-radius: 10px;
+}
