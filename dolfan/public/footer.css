@@ -1,0 +1,65 @@
+.footer{
+    width: 100%;
+    height: 100px;
+    bottom: 0;
+    background-color: #ffe984;
+    box-shadow: 0 0 3px hsla(240, 40%, 15%, 0.6);
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+}
+.about{
+    width: 35%;
+    height: 100%;
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: space-between;
+    margin-left: 9.5%;
+    margin-top: 6px;
+}
+.fabout{
+    background:none;
+    border:none;
+    margin:0;
+    padding:0;
+    cursor: pointer;
+    color: #000000;
+    font-size: 18px;
+}
+.fpicture{
+    width: 18%;
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: space-between;
+    margin-left: 10%;
+    margin-right: 8%;
+    margin-top: 6px;
+}
+.mediabtn{
+    background:none;
+    border:none;
+    margin:0;
+    padding:0;
+    cursor: pointer;
+    width: 42px;
+    height: 42px;
+}
+.mediaimg{
+    width: 42px;
+    height: 42px;
+}
+.lmediabtn{
+    background:none;
+    border:none;
+    margin:0;
+    padding:0;
+    cursor: pointer;
+    width: 50px;
+    height: 50px;
+}
+.lmediaimg{
+    width: 50px;
+    height: 50px;
+}

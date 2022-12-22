@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./dolfan.css">
+    <link rel="stylesheet" href="./header.css">
+    <link rel="stylesheet" href="./footer.css">
+    <title>Dolfan</title>
+  </head>
+
+  <body>
+    <header class ="header">
+      <button class="menubtn" id="menu"><img class="menupic" src="./images/menu.png"></button>
+      <div class="asideMenu">
+        <div class="title">IDOL LIST</div>
+        <div class="idolbox">
+          <p class="idol">Stray Kids</p>
+        </div>
+        <div class="idolbox">
+          <p class="idol">Red Velvet</p>
+        </div>
+        <div class="idolbox">
+          <p class="idol">Twice</p>
+        </div>
+      </div>
+      <button class="logobtn" id="logo"><img class="logopic" src="./images/logo.jpg"></button>
+      <button class="memberbtn" id="member"><img class="memberpic" src="./images/member.png"></button>
+    </header>
+    <div class="hr"></div>
+
+    
+    <div class="reminder">
+      <div class="reminderarea">
+        <pre class="content" id="content" style="white-space: pre-wrap;"></pre>
+      </div>
+    </div>
+      <button class="authorize" id="authorize_button" onclick="handleAuthClick()">Authorize</button>
+      <button class="addbtn" id="show">Add</button>
+      <!-- <button id="signout_button" onclick="handleSignoutClick()">Sign Out</button><br> -->
+    
+
+    <div class="calendar">
+     <iframe src="https://calendar.google.com/calendar/embed?height=600&wkst=1&bgcolor=%23ffffff&ctz=Asia%2FTaipei&src=ZG9sZmFuMjAyMjEyMDVAZ21haWwuY29t&color=%23039BE5" style="border:solid 1px #777" width="1200" height="750" frameborder="0" scrolling="no"></iframe>
+    </div>
+
+      <dialog id="infoModal">
+        <button class="closebtn" id="close"><img class="close" src="./images/close.png"></button>
+        <div class="addSchedule">
+          <div class="input">
+            <label class="inputtitle" for="title">Title:</label>
+            <input style="width: 505px;" type="text" id="title" name="title" required>
+          </div>
+          <div class="input">
+            <label class="inputtitle" for="des">Description:</label>
+            <textarea name="des" id="des" rows="5" cols="60"></textarea>
+          </div>
+          <div class="input">
+            <label class="inputtitle" for="schedule">Start time:</label>
+            <input id="startschedule" type="datetime-local" name="scheduledate" required>
+          </div>
+          <div class="input">
+            <label class="inputtitle" for="schedule">End time:</label>
+            <input id="endschedule" type="datetime-local" name="scheduledate" required>
+          </div>
+          <button class="submitbtn" id="submit">Add</button>
+        </div>
+      </dialog>
+
+      <div class="kuang">
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+    </div>
+
+      <div class="hr"></div>
+      <footer class="footer">
+        <div class="about">
+            <button class = "fabout" type="button">關於DOLFAN</button>
+            <font color="black">|</font>
+            <button class = "fabout" type="button">服務條款</button>
+            <font color="black">|</font>
+            <button class = "fabout" type="button">隱私政策</button>
+            <font color="black">|</font>
+            <button class = "fabout" type="button">聯絡我們</button>
+            <font color="black">|</font>
+            <button class = "fabout" type="button">FAQ</button>
+        </div>
+        <div class="fpicture">
+            <button class = "lmediabtn" type="button"><img class="lmediaimg" src="./images/line.png"></button>
+            <button class = "mediabtn" type="button"><img class="mediaimg" src="./images/twitter.png"></button>
+            <button class = "mediabtn" type="button"><img class="mediaimg" src="./images/facebook.png"></button>
+        </div>
+        <p style="color:grey; margin-top: 25px"> ©2022. All rights reserved.</p>
+      </footer>
+
+
+    <script type="text/javascript">
+      let btn=document.querySelector("#show");
+      let infoModal=document.querySelector("#infoModal");
+      let close=document.querySelector("#close");
+      let add=document.querySelector("#submit");
+
+      btn.addEventListener("click", function(){
+        infoModal.showModal();
+      })
+      close.addEventListener("click", function(){
+        infoModal.close();
+      })
+      add.addEventListener("click", function(){
+        insertEvents();
+        window.location.reload();
+      })
+
+      var CLIENT_ID = '996969019139-0s1gp84ed0meb2607sipf5n8jtrkrgvf.apps.googleusercontent.com';
+      var API_KEY = 'AIzaSyCcpNSqWWAj5n46d_aPmMQMVQTUm685Tj0';
+
+      var DISCOVERY_DOCS = "https://www.googleapis.com/discovery/v1/apis/calendar/v3/rest";
+
+      var SCOPES = "https://www.googleapis.com/auth/calendar";
+
+      let tokenClient;
+      let gapiInited = false;
+      let gisInited = false;
+      document.querySelector("#show").style.visibility = 'hidden';
+      document.getElementById('authorize_button').style.visibility = 'hidden';
+      // document.getElementById('signout_button').style.visibility = 'hidden';
+
+      function gapiLoaded() {
+        gapi.load('client', initializeGapiClient);
+      }
+
+      async function initializeGapiClient() {
+        await gapi.client.init({
+          apiKey: API_KEY,
+          discoveryDocs: [DISCOVERY_DOCS],
+        });
+        gapiInited = true;
+        maybeEnableButtons();
+      }
+
+      function gisLoaded() {
+        tokenClient = google.accounts.oauth2.initTokenClient({
+          client_id: CLIENT_ID,
+          scope: SCOPES,
+          callback: '', 
+        });
+        gisInited = true;
+        maybeEnableButtons();
+      }
+
+      function maybeEnableButtons() {
+        if (gapiInited && gisInited) {
+          document.getElementById('authorize_button').style.visibility = 'visible';
+          // document.querySelector("#show").style.visibility = 'visible';
+        }
+        listUpcomingEvents()
+      }
+
+      function handleAuthClick() {
+        tokenClient.callback = async (resp) => {
+          if (resp.error !== undefined) {
+            throw (resp);
+          }
+          // document.getElementById('signout_button').style.visibility = 'visible';
+          // document.getElementById('authorize_button').innerText = 'Refresh';
+          document.getElementById('authorize_button').style.visibility = 'collapse';
+          document.querySelector("#show").style.visibility = 'visible';
+          // await listUpcomingEvents();
+        };
+
+        if (gapi.client.getToken() === null) {
+          tokenClient.requestAccessToken({prompt: 'consent'});
+        } else {
+          tokenClient.requestAccessToken({prompt: ''});
+        }
+
+      }
+
+       // function handleSignoutClick() {
+      //   const token = gapi.client.getToken();
+      //   if (token !== null) {
+      //     google.accounts.oauth2.revoke(token.access_token);
+      //     gapi.client.setToken('');
+      //     document.getElementById('content').innerText = '';
+      //     document.getElementById('authorize_button').innerText = 'Authorize';
+      //     document.getElementById('signout_button').style.visibility = 'hidden';
+      //   }
+      // }
+
+      async function listUpcomingEvents() {
+        let response;
+        try {
+          const request = {
+            'calendarId': 'dolfan20221205@gmail.com',
+            'timeMin': (new Date()).toISOString(),
+            'showDeleted': false,
+            'singleEvents': true,
+            'maxResults': 3,
+            'orderBy': 'startTime',
+          };
+          response = await gapi.client.calendar.events.list(request);
+        } catch (err) {
+          // document.getElementById('content').innerText = err.message;
+          return;
+        }
+
+        const events = response.result.items;
+        if (!events || events.length == 0) {
+          document.getElementById('content').innerText = 'No events found.';
+          return;
+        }
+        
+        const output = events.reduce(
+            (str, event) => `${str}${event.summary} (${event.start.dateTime.replace('T',' ').substring(0,16) || event.start.date})\n`,
+            '近期活動：\n\n');
+            // console.log(output)
+            output.split('\\n+')
+            console.log(output[1])
+        document.getElementById('content').innerText = output;
+      }
+
+      function insertEvents() {
+      let startschedule=document.querySelector("#startschedule").value;
+      let endschedule=document.querySelector("#endschedule").value;
+      let title=document.querySelector("#title").value;
+      let des=document.querySelector("#des").value;
+      console.log(startschedule)
+      console.log(endschedule)
+      console.log(title)
+      console.log(des)
+      var resource = {
+      'summary': title,
+      'description': des,
+      'start': {
+          'dateTime': startschedule+':00+08:00',
+          'timeZone': 'Asia/Taipei'
+        },
+        'end': {
+          'dateTime': endschedule+':00+08:00',
+          'timeZone': 'Asia/Taipei'
+        }
+      };
+      var request = gapi.client.calendar.events.insert({
+        'calendarId': 'dolfan20221205@gmail.com',
+        'resource': resource
+      });
+      request.execute(function(resp) {
+        console.log(resp);
+      });
+    } 
+
+    </script>
+    <script async defer src="https://apis.google.com/js/api.js" onload="gapiLoaded()"></script>
+    <script async defer src="https://accounts.google.com/gsi/client" onload="gisLoaded()"></script>
+    
+  </script>
+  </body>
+</html>

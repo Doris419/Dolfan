@@ -1,0 +1,120 @@
+html, body{
+    width: 100%;
+    margin: 0;
+}
+.header{
+    height: 100px;
+    width: 100%;
+    background-color: #ffffff;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+    top: 0;
+}
+.hr{
+    background-color: #ffe984;
+    width: 100%;
+    height: 7px;
+    box-shadow: 0 0 3px hsla(240, 40%, 15%, 0.6);
+}
+.menubtn{
+    width: 40px;
+    height: 45px;
+    background:none;
+    border:none;
+    margin:0;
+    padding:0;
+    cursor: pointer;
+    margin-left: 20px;
+    margin-top: 30px;
+}
+.menupic{
+    width: 40px;
+    height: 45px;
+}
+.logobtn{
+    width: 300px;
+    height: 82px;
+    background:none;
+    border:none;
+    margin:0;
+    padding:0;
+    cursor: pointer;
+    margin-left: 35%;
+    margin-top: 12px;
+}
+.logopic{
+    width: 300px;
+    height: 82px;
+}
+.memberbtn{
+    width: 40px;
+    height: 40px;
+    background:none;
+    border:none;
+    padding:0;
+    cursor: pointer;
+    margin-top: 32px;
+    margin-left: auto;
+    margin-right: 25px;
+}
+.memberbtn:hover{
+    transform: scale(1.05);
+}
+.memberpic{
+    width: 40px;
+    height: 40px;
+}
+.asideMenu {
+    width: 190px;
+    /* height: 936px; */
+    height: 100%;
+    background-color: #ffffff;
+    position: absolute;
+    top: 107.9px;
+    bottom: 0;
+    left: 0;
+    border-right: 8px solid #ffe984;
+    box-shadow: 0 0 3px hsla(240, 40%, 15%, 0.6);
+    padding: 25px;
+    transform: translateX(-100%);
+    transition: all 0.5s;
+}
+.title{
+    font-size: 22px;
+    font-weight: bolder;
+    font-family: Comic Sans MS, Comic Sans, cursive;
+    color: #8dd3ff;
+    margin-top: 20px;
+}
+.idolbox{
+    cursor: pointer;
+    height: 30px;
+    position: relative;
+}
+.idolbox::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    height: 3px;
+    width: 0;
+    background-color: #ffe984;
+    transition: .3s;
+}
+.idolbox:hover::before {
+    width: 65%;
+    left: 0;
+}
+
+.idol{
+    margin-top: 30px;
+    font-family: Comic Sans MS, Comic Sans, cursive;
+}
+.menubtn:hover,
+.menubtn:focus{
+    transform: scale(1.05);
+}
+.menubtn:focus+.asideMenu{
+    transform: translateX(0px);
+}
