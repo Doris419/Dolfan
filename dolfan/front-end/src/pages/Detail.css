@@ -1,0 +1,323 @@
+*{
+    margin: 0;
+}
+.detailbig{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    flex-direction: column;
+    z-index: 60;
+}
+.detail{
+    width: 70%;
+    border-radius: 20px;
+    box-shadow: 0 5px 15px hsla(240, 2%, 69%, 0.6);
+    margin: 30px;
+    display: flex;
+    flex-wrap: nowrap;
+}
+.detailimgbig{
+    width: 400px;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    margin-left: 50px;
+}
+.detailimg{
+    width: 400px;
+    border: 0;
+    border-radius: 10px;
+}
+.detailinfo{
+    width: calc(100% - 400px);
+    border-radius: 10px;
+    margin: 40px 50px;
+    display: flex;
+    /* flex-wrap: wrap; */
+    flex-direction: column;
+}
+.infobutton{
+    width: 100%;
+    height: 50px;
+    padding: 0 40px;
+    display: flex;
+    flex-wrap: nowrap;
+    /* justify-content: space-between; */
+    align-items: center;
+}
+.funbuttons{
+    width: 40%;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+}
+.funbuttonbig{
+    background:none;
+    border:none;
+    padding:0;
+    cursor: pointer;
+}
+.funbutton{
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+}
+.savebutton{
+    color: #ffffff;
+    border-radius: 20%;
+    width: 65px;
+    height: 48px;
+    margin-left: auto;
+    border: 0;
+    cursor: pointer;  
+}
+.savebutton:hover,
+.savebutton:active{
+    transform: scale(1.02);
+}
+.button{
+    background:none;
+    border:none;
+    margin:0;
+    padding:0;
+    cursor: pointer;
+}
+.infoname{
+    font-size: 35px;
+    font-family: sans-serif;
+    font-weight: 600;
+    margin: 35px 20px;
+    margin-bottom: 10px;
+}
+.infoprice{
+    font-size: larger;
+    font-family: sans-serif;
+    font-size: 28px;
+    font-weight: 500;
+    margin: 0px 20px;
+}
+.infodes{
+    height: 60px;
+    font-size: large;
+    font-family: sans-serif;
+    margin: 20px 20px;
+}
+.uploader{
+    width: 420px;
+    height: 55px;
+    margin: 0px 20px;
+    border-radius: 30px;
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+}
+.userpic{
+    width: 55px;
+    height: 55px;
+}
+.infoemail{
+    font-size: large;
+    font-family: sans-serif;
+    color: #2a2929;
+    font-size: 18px;
+    font-weight: 400;
+    margin-left: 20px;
+}
+.opencomment{
+    margin: 35px 20px;
+    margin-top: 60px;
+    font-size: 25px;
+    font-weight: 550;
+    font-family: sans-serif;
+}
+.opencommentimg{
+    transition: 0.5ms;
+    margin-right: 17px;
+}
+.comment{
+    margin-top: -15px;
+    border-radius: 10px;
+}
+.commentarea{
+    width: 100%;
+    height: 200px;
+    overflow: auto;
+    scrollbar-width: thin;
+    box-shadow: 0 0px 5px hsla(240, 3%, 80%, 0.6);
+    border-radius: 10px;
+    margin-bottom: 18px;
+}
+.commentarea::-webkit-scrollbar {
+	width: 10px;
+	background-color: #F5F5F5;
+}
+.commentarea::-webkit-scrollbar-track {
+  border-radius: 10px;
+  background: rgba(0,0,0,0.1);
+  border: 1px solid #ccc;
+}
+
+.commentarea::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background: linear-gradient(left, #fff, #e4e4e4);
+  border: 1px solid #aaa;
+}
+
+.commentarea::-webkit-scrollbar-thumb:hover {
+  background: #fff;
+}
+
+.commentarea::-webkit-scrollbar-thumb:active {
+  background: linear-gradient(left, #22ADD4, #1E98BA);
+}
+.commentR{
+    height: 60px;
+    border-radius: 20px;
+    margin: 8px;
+    display: flex;
+    flex-wrap: nowrap;
+}
+.commentuserpic{
+    width: 50px;
+    height: 50px;
+    margin: 0 15px;
+}
+.commentI{
+    margin-top: 4.5px;
+    margin-left: 15px;
+}
+.commentIname{
+    font-size: 17px;
+    font-family: sans-serif;
+    font-weight: 600;
+}
+.commentIcontent{
+    margin-left: 10px;
+    margin-top: 1px;
+    font-size: 15.5px;
+}
+.commentTime{
+    margin-top: 1px;
+    font-size: 13px;
+}
+.report{
+    width: 23px;
+    height: 23px;
+    margin-left: auto;
+    margin-right: 16px;
+    align-self: center;
+    cursor: pointer;
+}
+.commentinputbig{
+    width: 85%;
+    position: relative;
+}
+.commentinput{
+    width: 100%;
+    height: 45px;
+    border-radius: 20px;
+}
+.sendbtn{
+    width: 35px;
+    height: 35px;
+    cursor: pointer;
+    position: absolute;
+    margin-top: 4.5px;
+    margin-right: 4px;
+    right: 0;
+}
+.more{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    padding-top: 10px;
+    margin-top: 25px;
+}
+.morepos{
+    position: absolute;
+    left: 50%;
+    width: 100px;
+    height: 20px;
+    margin-left: -50px;
+    background: rgb(255, 255, 255);
+    font-size: 25px;
+    font-weight: 600;
+}
+.morearea{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: -5px;
+}
+.waterfall {
+    width: 90%;
+    margin: 0px auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    column-count: 5;
+    column-gap: 5px;
+    position: relative;
+}
+.item {
+    text-align: center;
+    padding: 6px;
+    box-sizing: border-box;
+    margin: 0 auto 5px;
+    break-inside: avoid;
+    border: 0;
+    border-radius: 10px;
+    cursor: pointer;
+    -webkit-filter: drop-shadow(5px 5px 5px rgba(0, 0, 0, 0.7));
+    filter: drop-shadow(5px 5px 5px rgba(0, 0, 0, 0.7));
+}
+.item:hover {
+    transform: scale(1.01);
+    transition: 0.5ms;
+}
+.itemimg{
+    width: 100%;
+    object-fit: cover;
+    object-position: 50% 50%;
+    border-radius: 10px;
+}
+.deleteMerch{
+    width: 65px;
+    height: 65px;
+    border-radius: 50%;
+    background-color: rgb(255, 255, 255);
+    position: fixed;
+    right: 40px;
+    bottom: 25px;
+    cursor: pointer;
+    box-shadow: 0 0 5px hsla(240, 40%, 15%, 0.6);
+    padding: 15px;
+    z-index: 999;
+}
+.deleteMerch:hover{
+    transform: scale(1.03);
+    transition: 0.5ms;
+}
+.dialog{
+    width: 400px;
+    height: 300px;
+}
+.deleteinfo{
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    margin-top: 65px;
+}
+.deletebtn{
+    width: 70px;
+    height: 30px;
+    margin: auto;
+    margin-top: 60px;
+    border-radius: 10px;
+    border-color: #ffe054;
+    background-color: #ffe984;
+    color: #000000;
+    font-family: sans-serif;
+    cursor: pointer;
+}

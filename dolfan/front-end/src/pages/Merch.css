@@ -1,0 +1,103 @@
+*{
+    margin: 0;
+}
+.banner{
+    width: 100%;
+    margin-top: 45px;
+    margin-bottom: 35px;
+}
+.Merch{
+    width: 90%;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+#artisttitle{
+    font-size: 40px;
+    font-family:sans-serif;
+    font-weight: 600;
+}
+.artist{
+    width: 100%;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+}
+#artistname{
+    height: 25px;
+    font-size: 18px;
+    font-family:sans-serif;
+    font-weight: 400;
+    margin: 8px 30px;
+    cursor: pointer;
+}
+#artistname:hover{
+    /* border-bottom: 2px #61b5fd solid; */
+    transform: scale(1.02);
+}
+.waterfall {
+    width: 90%;
+    margin: 0px auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    column-count: 5;
+    column-gap: 5px;
+}
+.item {
+    /* background-color: #eeeeee; */
+    text-align: center;
+    padding: 6px;
+    box-sizing: border-box;
+    margin: 0 auto 5px;
+    break-inside: avoid;
+    border: 0;
+    border-radius: 10px;
+    cursor: pointer;
+    /* box-shadow: 0 0 3px hsla(240, 40%, 15%, 0.6); */
+    -webkit-filter: drop-shadow(5px 5px 5px rgba(0, 0, 0, 0.7));
+    filter: drop-shadow(5px 5px 5px rgba(0, 0, 0, 0.7))
+}
+.item:hover {
+    transform: scale(1.01);
+    transition: 0.5ms;
+}
+.itemimg{
+    width: 100%;
+    object-fit: cover;
+    object-position: 50% 50%;
+    border-radius: 10px;
+}
+.addMerch{
+    width: 65px;
+    height: 65px;
+    border-radius: 50%;
+    background-color: rgb(255, 255, 255);
+    position: fixed;
+    right: 40px;
+    bottom: 25px;
+    cursor: pointer;
+    box-shadow: 0 0 5px hsla(240, 40%, 15%, 0.6);
+    padding: 15px;
+}
+.addMerch:hover{
+    transform: scale(1.03);
+    transition: 0.5ms;
+    /* background-color: #ffe884; */
+}
+.closebtn{
+    width: 20px;
+    height: 20px;
+    background:none;
+    border:none;
+    margin:0;
+    padding:0;
+    cursor: pointer;
+    float: right;
+}
+.addpic,
+.close{
+    width: 20px;
+    height: 20px;
+}
