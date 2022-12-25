@@ -51,7 +51,8 @@ const addMerch = async (req, res) => {
     const pic = req.files.file[0].filename;
     const email = req.body.email;
     await Merch.addMerch(idol,pic,email,name,des,price);
-    res.sendStatus(200);
+    res.redirect('https://www.quokkanim.tk/merch');
+    // res.sendStatus(200);
 };
 
 const deletemerch = async (req, res) => {
