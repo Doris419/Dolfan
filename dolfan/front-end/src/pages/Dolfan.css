@@ -102,17 +102,52 @@
 .addSchedule{
     display: flex;
     flex-direction: column;
-    margin-left: 65px;
+    align-items: center;
     margin-top: 15px;
 }
+#infoModal::-webkit-scrollbar {
+	width: 10px;
+	background-color: #F5F5F5;
+}
+#infoModal::-webkit-scrollbar-track {
+  border-radius: 10px;
+  background: rgba(0,0,0,0.1);
+  border: 1px solid #ccc;
+}
+
+#infoModal::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background: linear-gradient(left, #fff, #e4e4e4);
+  border: 1px solid #aaa;
+}
+
+#infoModal::-webkit-scrollbar-thumb:hover {
+  background: #fff;
+}
+
+#infoModal::-webkit-scrollbar-thumb:active {
+  background: linear-gradient(left, #22ADD4, #1E98BA);
+}
 .input{
+    display: flex;
+    flex-direction: column;
     margin-top: 20px;
     margin-bottom: 20px;
+    box-shadow: 0 0px 3px hsla(240, 1%, 46%, 0.6);
+    /* border-style:solid;
+    border-width: 1.5px;
+    border-color: rgba(80, 81, 81, 0.852); */
+    border-radius: 10px;
+    width: 70%;
+    padding: 5px;
 }
 .inputtitle{
-    margin-left: 60px;
+    width: 100px;
     /* font-family: Comic Sans MS, Comic Sans, cursive; */
     font-family:sans-serif;
+    font-size: 5px;
+    color: rgba(80, 81, 81, 0.852);
+    margin-left: 5px;
 }
 .closebtn{
     width: 20px;
@@ -132,10 +167,10 @@
 dialog{
     border: none;
     box-shadow: 0 2px 6px #ccc;
-    border-radius: 10px;
+    border-radius: 15px;
     padding-right: 15px;
-    width: 850px;
-    height: 500px;
+    width: 800px;
+    height: 585px;
     margin:auto;
 }
 dialog::backdrop {
@@ -145,7 +180,6 @@ dialog::backdrop {
     width: 50px;
     height: 30px;
     margin-top: 20px;
-    margin-left: 48%;
     border-radius: 10px;
     border-color: #ffe054;
     background-color: #ffe984;

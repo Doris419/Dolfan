@@ -9,7 +9,6 @@ import sea from '../images/sea.png';
 import back from '../images/back.png';
 import { gapi } from 'gapi-script';
 function Dolfan() {
-  const [schedule, setSchedule] = React.useState();
 
   useEffect(() => {
     document.getElementById('show').style.visibility = 'hidden';
@@ -72,6 +71,7 @@ function Dolfan() {
   }
 
   function handleAuthClick() {
+
     tokenClient = window.google.accounts.oauth2.initTokenClient({
       client_id: CLIENT_ID,
       scope: SCOPES,
@@ -200,19 +200,19 @@ function Dolfan() {
         <button className="closebtn" id="close" onClick={close}><img className="close" src={closepic} /></button>
         <div className="addSchedule">
           <div className="input">
-            <label className="inputtitle">Title:</label>
-            <input style={{ width: '505px' }} type="text" id="title" name="title" required />
+            <label className="inputtitle">Title</label>
+            <input style={{ width: '515px'}} type="text" id="title" name="title" required />
           </div>
           <div className="input">
-            <label className="inputtitle">Description:</label>
+            <label className="inputtitle">Description</label>
             <textarea name="des" id="des" rows="5" cols="60"></textarea>
           </div>
           <div className="input">
-            <label className="inputtitle">Start time:</label>
+            <label className="inputtitle">Start time</label>
             <input id="startschedule" type="datetime-local" name="scheduledate" required />
           </div>
           <div className="input">
-            <label className="inputtitle">End time:</label>
+            <label className="inputtitle">End time</label>
             <input id="endschedule" type="datetime-local" name="scheduledate" required />
           </div>
           <button className="submitbtn" id="submit" onClick={insertEvents}>Add</button>

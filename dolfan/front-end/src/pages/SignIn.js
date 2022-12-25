@@ -74,9 +74,11 @@ const SignIn = () => {
             .then((result) => { setMore(result) })
             .catch(error => window.alert(error))
     }
+
     if (moremore) {
         var moremores = moremore.map((moremore, index) =>
             <div className="item1" key={index}>
+                {moremore.status==0 && <div className='statusflag'></div>}
                 <a href={`/merch/detail/${moremore.type}/${moremore.id}`}>
                     <img className="itemimg" src={path + moremore.pic} />
                 </a>
