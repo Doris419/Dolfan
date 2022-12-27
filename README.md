@@ -38,7 +38,7 @@ DB_PWD= [PASSWORD]
 * Three closest schedules will be listed on the top.
 
 ### Merch Transaction
-![image](https://user-images.githubusercontent.com/111197945/209714608-0db44539-1c18-4a5e-bc5e-c180710d125a.png)
+![image](https://user-images.githubusercontent.com/111197945/209716327-7edf5158-9669-4acd-8f49-d3f841c6b9a9.png)
 * Select merch you want and copy the link of this page to share with friends.
 * Press save button to add this merch to favorite collection.
 * Leave comments to ask for more details and share your thoughts.
