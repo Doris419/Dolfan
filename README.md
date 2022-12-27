@@ -1,5 +1,9 @@
 # Dolfan
 
+### URL(https://www.quokkanim.tk)
+
+### platform for idol's schedules and merches
+
 ### Project setup
 ```
 npm install
