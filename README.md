@@ -2,7 +2,7 @@
 
 ### Platform for idol's schedules and merches
 ![image](https://user-images.githubusercontent.com/111197945/209712979-a72ddba1-a0ae-4810-a887-2329866400b0.png)
-* URL(https://www.quokkanim.tk)
+
 * Use menu on the left to select function.
 
 
